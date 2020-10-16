@@ -22,9 +22,9 @@ app.post("/", function(req, res){
 });
 
 app.post("/bmicalculator", function(req, res){
-  var weight = Number(req.body.weight);
-  var hight = Number(req.body.hight);
-  var bmi = Math.round(weight / (hight * hight));
+  var weight = parseFloat(req.body.weight);
+  var hight = parseFloat(req.body.hight);
+  var bmi = weight / (hight * hight);
   res.send("Your BMI is " + bmi + ".");
 });
 
